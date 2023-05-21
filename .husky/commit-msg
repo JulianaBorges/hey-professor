@@ -9,7 +9,7 @@ BRed='\033[1;31m'
 
 REDEX_ISSUE_ID="[a-zA-Z0-9,\.\_\-]+-[0-9]+"
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
-ISSUE_ID=$(echo "$BRANCH_NOME" | gred -o -E "$REGEX_ISSUE_ID")
+ISSUE_ID=$(echo "$BRANCH_NOME" | grep -o -E "$REGEX_ISSUE_ID")
 COMMIT_MESSAGE=$(cat "$1")
 
 if [ -z "ISSUE_ID" ]; then
