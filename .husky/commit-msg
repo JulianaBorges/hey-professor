@@ -20,6 +20,6 @@ fi
 #validar o padrão da mensagem do commit
 if [[ $COMMIT_MESSAGE == $ISSUE_ID* ]]; then
     exit 0
-fi 
+fi
 
 echo "$ISSUE_ID: $COMMIT_MESSAGE" >$1
