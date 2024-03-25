@@ -22,22 +22,20 @@ it('should be able to create a new question bigger than 255 characters', functio
 
 });
 
-it('valida se o ultimo caracter é o ponto de interrogação', function () {
+it('valida se o ultimo caractere é um ponto de interrogação', closure: function () {
 
-    //Arrange :: preparar
     $user = User::factory()->create();
     actingAs($user);
 
-    //Act :: agir
+    // Act :: agir
     $request = post(route('question.store'), [
         'question' => str_repeat('*', 10),
     ]);
 
-    //assert :: verificar
+    // Assert :: verificar
     $request->assertSessionHasErrors([
-        'question' => 'Verifier se há ponto de interrogação no final da frase.',
+        'question' => 'Are you sure that is a question? It is missing the question mark in the end.',
     ]);
-
     assertDatabaseCount('questions', 0);
 });
 

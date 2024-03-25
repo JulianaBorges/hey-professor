@@ -16,9 +16,10 @@ class QuestionController extends Controller
             'question' => [
                 'required',
                 'min:10',
+
                 function (string $attribute, mixed $value, Closure $fail) {
                     if ($value[strlen($value) - 1] != '?') {
-                        $fail('Verifique se há ponto de interrogação no final da frase.');
+                        $fail('Are you sure that is a question? It is missing the question mark in the end.');
                     }
                 },
             ],
