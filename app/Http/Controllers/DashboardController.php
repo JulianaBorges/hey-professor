@@ -9,7 +9,6 @@ class DashboardController extends Controller
 {
     public function __invoke(): view
     {
-        //dd('OI');
 
         return view('dashboard', [
             'questions' => Question::all(),
