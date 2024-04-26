@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     if (app()->islocal()) {
-        auth()->loginUsingId(8);
+        auth()->loginUsingId(6);
 
         return to_route('dashboard');
     }

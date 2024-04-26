@@ -22,5 +22,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //model desprotegida
         Model::unguard();
+        Model::preventLazyLoading(!app()->isProduction());
     }
 }
