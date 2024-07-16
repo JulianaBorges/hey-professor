@@ -94,6 +94,5 @@ it(
         //Assert
         expect($user->votes()->where('question_id', '=', $question->id)->get())
             ->tohaveCount(1);
-
     }
 );
