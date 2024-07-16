@@ -29,7 +29,7 @@ it('should create as  a draft all the time', function () {
     actingAs($user);
 
     //Act :: agir
-    $request = post(route('question.store'), [
+    post(route('question.store'), [
         'question' => str_repeat('*', 260) . '?',
     ]);
 
